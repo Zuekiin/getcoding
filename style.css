@@ -20,9 +20,9 @@
 
 a,
 a:visited,
-a:hover,
 a:active {
   color: inherit;
+  transition: 200ms ease-in-out;
 }
 
 /* responsive images/videos */
@@ -82,8 +82,9 @@ li {
   width: fit-content;
   color: #fff;
   font-size: 1.5rem;
-  padding: 0.5em 1.5rem;
+  padding: 0.5em 1.5em;
   background: #5b2e48;
+  border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: 200ms ease-in-out;
@@ -91,7 +92,9 @@ li {
 }
 
 .btn:hover {
+  color: #fff;
   background-color: #bd5b94;
+  text-decoration: none;
 }
 
 .links-footer {
@@ -100,4 +103,9 @@ li {
   gap: 2rem;
   font-size: 1.875rem;
   padding: 3rem;
+}
+
+a:hover {
+  color: #bd5b94;
+  text-decoration: underline;
 }
