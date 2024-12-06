@@ -38,44 +38,77 @@ body {
   font-family: roboto;
 }
 
+/* HEADER & NAV */
 header {
+  display: flex;
+  justify-content: center;
   max-width: 100vw;
   background-color: black;
   background-image: url(/img/bg_header.jpg);
   background-size: cover;
   background-position: top;
-  padding: 2.8rem 1.5rem 30rem;
-  margin: 0 auto;
+  padding: 0 0 30rem;
 }
 
 nav {
-  position: relative;
+  margin-top: 2.8rem;
+  width: 90%;
+  box-sizing: border-box;
+  position: fixed;
+  display: flex;
   background-color: #fff;
-  padding: 1.5em;
-  margin: 0 auto;
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.nav-links,
-li {
-  font-size: 1.5rem;
-  color: black;
+.links-container {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
+  text-align: center;
 }
 
+nav a {
+  height: 100%;
+  padding: 0 1.2em;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: black;
+}
+
+a:hover {
+  color: #bd5b94;
+  text-decoration: underline;
+}
+
+/* CHECKBOX SWITCH OFF */
+#sidebar-active {
+  display: none;
+}
+
+.open-sidebar-button,
+.closed-sidebar-button {
+  display: none;
+  padding: 0 1em;
+}
+
+/* CTA SECTION */
 #cta-section {
   font-size: 2.25rem;
   color: #fff;
   background-color: #587291;
   display: flex;
   flex-direction: column;
-  padding-top: 16rem;
-  padding-bottom: 16rem;
+  padding: 14rem 1.5rem;
   align-items: center;
   gap: 2rem;
+  text-align: center;
 }
 
 .btn {
@@ -99,13 +132,70 @@ li {
 
 .links-footer {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
-  gap: 2rem;
-  font-size: 1.875rem;
-  padding: 3rem;
+  gap: 1em;
+  font-size: 1.5rem;
+  padding: 1.5rem 4rem;
 }
 
-a:hover {
-  color: #bd5b94;
-  text-decoration: underline;
+/* RESPONSIVE */
+@media (max-width: 622px) {
+  #cta-section {
+    font-size: 1.5rem;
+    padding: 8rem 1.5rem;
+  }
+
+  /* NAVBAR */
+  header {
+    padding: 0 0 30rem;
+  }
+
+  nav {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .links-container {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  nav a {
+    box-sizing: border-box;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    padding: 0.5em 1em;
+  }
+
+  /* CHECKBOX SWITCH ON */
+  .open-sidebar-button,
+  .closed-sidebar-button {
+    display: block;
+  }
+
+  .closed-sidebar-button {
+    margin-bottom: 3rem;
+  }
+
+  #sidebar-active:checked ~ .links-container {
+    display: flex;
+  }
+
+  /* FOOTER RESIZE */
+  .links-footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+    gap: 0.5em;
+    font-size: 1rem;
+  }
 }
