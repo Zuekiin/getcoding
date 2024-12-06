@@ -1,13 +1,9 @@
-/* makes sizing simpler */
-
+/* Global Reset */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
-/* remove default spacing */
-/* force styling of type through styling, rather than elements */
 
 * {
   margin: 0;
@@ -16,8 +12,7 @@
   text-decoration: none;
 }
 
-/* reset anchor tags */
-
+/* Anchor Tag Styles */
 a,
 a:visited,
 a:active {
@@ -25,7 +20,12 @@ a:active {
   transition: 200ms ease-in-out;
 }
 
-/* responsive images/videos */
+a:hover {
+  color: #bd5b94;
+  text-decoration: underline;
+}
+
+/* Responsive Media */
 img,
 picture,
 svg,
@@ -34,60 +34,51 @@ video {
   max-width: 100%;
 }
 
+/* Body */
 body {
-  font-family: roboto;
+  font-family: roboto, sans-serif;
 }
 
-/* HEADER & NAV */
+/* Header and Nav */
 header {
   display: flex;
   justify-content: center;
   max-width: 100vw;
-  background-color: black;
-  background-image: url(/img/bg_header.jpg);
-  background-size: cover;
-  background-position: top;
-  padding: 0 0 30rem;
+  background: black url(/img/bg_header.jpg) top / cover no-repeat;
+  padding-bottom: 30rem;
 }
 
 nav {
-  margin-top: 2.8rem;
-  width: 90%;
-  box-sizing: border-box;
   position: fixed;
+  top: 0;
   display: flex;
-  background-color: #fff;
-  padding: 1.5rem;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  width: 90%;
+  margin-top: 2.8rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .links-container {
-  width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
   text-align: center;
 }
 
 nav a {
-  height: 100%;
-  padding: 0 1.2em;
   display: flex;
   align-items: center;
+  padding: 0 1.2em;
   font-size: 1.5rem;
   color: black;
 }
 
-a:hover {
-  color: #bd5b94;
-  text-decoration: underline;
-}
-
-/* CHECKBOX SWITCH OFF */
+/* Sidebar Buttons */
 #sidebar-active {
   display: none;
 }
@@ -98,57 +89,49 @@ a:hover {
   padding: 0 1em;
 }
 
-/* CTA SECTION */
+/* CTA Section */
 #cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 14rem 1.5rem;
   font-size: 2.25rem;
   color: #fff;
   background-color: #587291;
-  display: flex;
-  flex-direction: column;
-  padding: 14rem 1.5rem;
-  align-items: center;
-  gap: 2rem;
   text-align: center;
 }
 
 .btn {
-  width: fit-content;
-  color: #fff;
-  font-size: 1.5rem;
   padding: 0.5em 1.5em;
+  font-size: 1.5rem;
+  color: #fff;
   background: #5b2e48;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   transition: 200ms ease-in-out;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
-  color: #fff;
   background-color: #bd5b94;
-  text-decoration: none;
 }
 
+/* Footer Links */
 .links-footer {
   display: flex;
-  flex-direction: row;
   justify-content: flex-end;
   gap: 1em;
-  font-size: 1.5rem;
   padding: 1.5rem 4rem;
+  font-size: 1rem;
 }
 
-/* RESPONSIVE */
+/* Responsive Styles */
 @media (max-width: 622px) {
   #cta-section {
-    font-size: 1.5rem;
     padding: 8rem 1.5rem;
-  }
-
-  /* NAVBAR */
-  header {
-    padding: 0 0 30rem;
+    font-size: 1.5rem;
   }
 
   nav {
@@ -159,24 +142,21 @@ a:hover {
   .links-container {
     display: none;
     position: fixed;
-    flex-direction: column;
     top: 0;
     z-index: 10;
+    flex-direction: column;
     width: 100%;
     height: 50%;
     background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   nav a {
-    box-sizing: border-box;
-    height: auto;
     width: 100%;
-    justify-content: center;
     padding: 0.5em 1em;
+    justify-content: center;
   }
 
-  /* CHECKBOX SWITCH ON */
   .open-sidebar-button,
   .closed-sidebar-button {
     display: block;
@@ -190,12 +170,10 @@ a:hover {
     display: flex;
   }
 
-  /* FOOTER RESIZE */
   .links-footer {
     flex-direction: column;
-    text-align: center;
-    padding: 1em;
     gap: 0.5em;
-    font-size: 1rem;
+    padding: 1em;
+    text-align: center;
   }
 }
